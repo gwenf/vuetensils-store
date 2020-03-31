@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import 'foundation-sites/dist/css/foundation.min.css'
 import App from './App.vue'
 
 Vue.config.productionTip = false
