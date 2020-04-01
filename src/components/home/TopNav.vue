@@ -2,7 +2,7 @@
   <div class="top-bar">
     <div class="top-bar-left">
       <ul class="dropdown menu" data-dropdown-menu>
-        <li class="menu-text">Site Title</li>
+        <li class="menu-text">Awesome Shop</li>
         <li><a href="#">Recent Purchases</a></li>
         <li><a href="#">Cart</a></li>
       </ul>
