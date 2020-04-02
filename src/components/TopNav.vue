@@ -10,8 +10,21 @@
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-        <li><button type="button" class="button">Menu</button></li>
+        <li>
+          <button @click="openDrawer" type="button" class="button">
+            Menu
+          </button>
+        </li>
       </ul>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    showDrawer: Boolean,
+    openDrawer: Function
+  }
+}
+</script>
