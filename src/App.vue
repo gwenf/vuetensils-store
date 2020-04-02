@@ -4,13 +4,30 @@
       :showDrawer="showDrawer" 
       :openDrawer="openDrawer"
     />
+
     <VDrawer
       v-model="showDrawer"
       transition="slide-right"
       bg-transition="fade"
       right
     >
-      My drawer content
+      <ul class="no-bullet">
+        <li>
+          <router-link to="/">
+            <h4>Home</h4>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/cart">
+            <h4>Cart</h4>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/past-purchases">
+            <h4>Past Purchases</h4>
+          </router-link>
+        </li>
+      </ul>
     </VDrawer>
     
     <router-view />
@@ -46,9 +63,12 @@ export default {
 
 .vts-drawer__content {
   padding: 20px;
-  color: #fff;
   background-color: #222;
   transition: transform 0.3s;
+}
+
+.vts-drawer__content a {
+  color: #fff;
 }
 
 .fade-enter-active,
