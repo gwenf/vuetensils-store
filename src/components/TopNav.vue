@@ -3,8 +3,9 @@
     <div class="top-bar-left">
       <ul class="dropdown menu" data-dropdown-menu>
         <li class="menu-text">Awesome Shop</li>
-        <li><a href="#">Recent Purchases</a></li>
-        <li><a href="#">Cart</a></li>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/cart">Cart</router-link></li>
+        <li><router-link to="/past-purchases">Past Purchases</router-link></li>
       </ul>
     </div>
     <div class="top-bar-right">
