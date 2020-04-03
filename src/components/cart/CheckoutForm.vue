@@ -4,7 +4,7 @@
       <label>
         Name:
         <small>(required)</small>
-        <input name="name" required />
+        <input name="name" type="text" required />
       </label>
 
       <label>
