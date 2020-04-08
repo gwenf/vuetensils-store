@@ -31,17 +31,19 @@
     </VDrawer>
     
     <router-view />
+    <VAlert class="info" dismissible>Hey, I'm an alert!</VAlert>
   </div>
 </template>
 
 <script>
-import { VDrawer } from "vuetensils"
+import { VDrawer, VAlert } from "vuetensils"
 import TopNav from '@/components/TopNav.vue'
 
 export default {
   components: {
     TopNav,
-    VDrawer
+    VDrawer,
+    VAlert
   },
   data() {
     return {
@@ -91,4 +93,22 @@ export default {
   opacity: 0;
   transform: translateX(+100%);
 }
+
+.vts-alert.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  padding: 10px;
+  color: #009;
+  background: #dff;
+}
+
+.vts-alert.info .vts-alert__dismiss {
+  border: 0;
+  font: inherit;
+  background: transparent;
+}
+
 </style>

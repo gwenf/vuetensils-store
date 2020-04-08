@@ -15,8 +15,9 @@
             <div class="card-divider">
               Product Name
             </div>
-            <div class="card-section">
+            <div class="card-section grid-y">
               Product Info
+              <button class="button">Add to Cart</button>
             </div>
           </div>
         </div>
@@ -25,8 +26,9 @@
             <div class="card-divider">
               Product Name
             </div>
-            <div class="card-section">
+            <div class="card-section grid-y">
               Product Info
+              <button class="button">Add to Cart</button>
             </div>
           </div>
         </div>
@@ -35,8 +37,9 @@
             <div class="card-divider">
               Product Name
             </div>
-            <div class="card-section">
+            <div class="card-section grid-y">
               Product Info
+              <button class="button">Add to Cart</button>
             </div>
           </div>
         </div>
