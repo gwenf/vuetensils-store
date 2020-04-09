@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <TopNav
-      :showDrawer="showDrawer" 
-      :openDrawer="openDrawer"
+      :showDrawer="drawerState" 
+      :openMenu="openMenu"
     />
 
     <VDrawer
-      v-model="showDrawer"
+      v-model="drawerState"
       transition="slide-right"
       bg-transition="fade"
       right
@@ -31,11 +31,18 @@
     </VDrawer>
     
     <router-view />
-    <VAlert class="info" dismissible>Hey, I'm an alert!</VAlert>
+    <VAlert
+      :class="alertDetails.color"
+      v-model="alertDetails.isOpen"
+      dismissible
+    >
+      {{ alertDetails.message }}
+    </VAlert>
   </div>
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 import { VDrawer, VAlert } from "vuetensils"
 import TopNav from '@/components/TopNav.vue'
 
@@ -47,12 +54,23 @@ export default {
   },
   data() {
     return {
-      showDrawer: false
+    }
+  },
+  computed: {
+    ...mapState(['alertDetails', 'showDrawer']),
+    drawerState: {
+      get () {
+        return this.showDrawer
+      },
+      set (value) {
+        this.setDrawer(value)
+      }
     }
   },
   methods: {
-    openDrawer() {
-      this.showDrawer = true
+    ...mapMutations(['setDrawer']),
+    openMenu() {
+      this.setDrawer(true)
     }
   }
 }
@@ -94,7 +112,7 @@ export default {
   transform: translateX(+100%);
 }
 
-.vts-alert.info {
+.vts-alert.success {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -102,10 +120,14 @@ export default {
   border-radius: 4px;
   padding: 10px;
   color: #009;
-  background: #dff;
+  background: lightgreen;
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  min-width: 300px;
 }
 
-.vts-alert.info .vts-alert__dismiss {
+.vts-alert.success .vts-alert__dismiss {
   border: 0;
   font: inherit;
   background: transparent;

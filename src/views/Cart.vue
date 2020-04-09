@@ -12,27 +12,7 @@
         >
           <h3 class="subheader">Cart</h3>
         </div>
-        <div class="cell small-4">
-          <div class="card">
-            <div class="card-divider">
-              Product Name
-            </div>
-            <div class="card-section">
-              Product Info
-            </div>
-          </div>
-        </div>
-        <div class="cell small-4">
-          <div class="card">
-            <div class="card-divider">
-              Product Name
-            </div>
-            <div class="card-section">
-              Product Info
-            </div>
-          </div>
-        </div>
-        <div class="cell small-4">
+        <div class="cell small-4" v-for="i in products" :key="i">
           <div class="card">
             <div class="card-divider">
               Product Name
@@ -66,12 +46,7 @@ export default {
   },
   data() {
     return {
-
-    }
-  },
-  methods: {
-    checkout() {
-      console.log('Checking out...')
+      products: [...Array(5).keys()]
     }
   }
 }

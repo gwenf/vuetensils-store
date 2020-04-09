@@ -11,7 +11,7 @@
     <div class="top-bar-right">
       <ul class="menu">
         <li>
-          <button @click="openDrawer" type="button" class="button">
+          <button @click="openMenu" type="button" class="button">
             Menu
           </button>
         </li>
@@ -24,7 +24,7 @@
 export default {
   props: {
     showDrawer: Boolean,
-    openDrawer: Function
+    openMenu: Function
   }
 }
 </script>

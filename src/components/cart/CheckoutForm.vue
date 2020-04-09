@@ -1,5 +1,5 @@
 <template>
-  <VForm class="styled" @submit.prevent>
+  <VForm class="styled" @submit.prevent="submit">
     <template #default="form">
       <label>
         Name:
@@ -19,8 +19,20 @@
         <input name="password" type="password" required minlength="6" />
       </label>
 
+      <p>Valid: {{ form.valid }}</p>
+      <p>Dirty: {{ form.dirty }}</p>
+      <p>Error: {{ form.error }}</p>
+
       <button type="submit" class="button" :disabled="!form.valid">
         Submit
+      </button>
+      <button
+        style="margin-left: 5px"
+        class="hollow button secondary"
+        @click="form.clear"
+        :disabled="!form.dirty"
+      >
+        Clear
       </button>
     </template>
   </VForm>
@@ -32,6 +44,11 @@ import { VForm } from "vuetensils"
 export default {
   components: {
     VForm
+  },
+  methods: {
+    submit() {
+      console.log('submitted')
+    }
   }
 }
 </script>
