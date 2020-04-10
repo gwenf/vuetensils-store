@@ -19,6 +19,14 @@
         <input name="password" type="password" required minlength="6" />
       </label>
 
+      <VInput
+        v-model="username"
+        type="text"
+        name="username"
+        label="Username"
+        pattern="cat"
+      />
+
       <p>Valid: {{ form.valid }}</p>
       <p>Dirty: {{ form.dirty }}</p>
       <p>Error: {{ form.error }}</p>
@@ -30,7 +38,6 @@
         style="margin-left: 5px"
         class="hollow button secondary"
         @click="form.clear"
-        :disabled="!form.dirty"
       >
         Clear
       </button>
@@ -39,11 +46,17 @@
 </template>
 
 <script>
-import { VForm } from "vuetensils"
+import { VForm, VInput } from "vuetensils"
 
 export default {
   components: {
-    VForm
+    VForm,
+    VInput
+  },
+  data() {
+    return {
+      username: ''
+    }
   },
   methods: {
     submit() {
@@ -52,3 +65,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.vts-form--error {
+  border-color: red;
+}
+</style>

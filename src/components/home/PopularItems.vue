@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-container fluid" style="background: #eee; height: 300px">
+  <div class="grid-container fluid" style="background: #eee; height: 460px">
     <div
       class="grid-x"
     >
@@ -13,8 +13,9 @@
         <div class="cell small-4" v-for="i in products" :key="i">
           <div class="card">
             <div class="card-divider">
-              Product {{ i }}
+              Product {{ i + 1 }}
             </div>
+            <VImg src="dice.jpg" />
             <div class="card-section grid-y">
               Product Info
               <button class="button" @click="addToCart">Add to Cart</button>
@@ -28,8 +29,12 @@
 
 <script>
 import { mapMutations } from 'vuex'
+import { VImg } from 'vuetensils'
 
 export default {
+  components: {
+    VImg
+  },
   data() {
     return {
       products: [...Array(3).keys()]
