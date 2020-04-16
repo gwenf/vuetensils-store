@@ -1,4 +1,4 @@
-# vuetensils-store
+# Vuetensils Store Demo
 
 This is a simple store app intended to demonstrate some of the features of [the Vuetensils UI component library](https://vuetensils.stegosource.com/).
 
